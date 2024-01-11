@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\" ",
-
-    "start": "ts-node src/app.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node src/app.ts"
+    
   },
   "keywords": [],
   "author": "",
