@@ -36,18 +36,14 @@ export const userSignup = async (
     // create token and store cookie
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "https://mern-gpt-bs1j.vercel.app",
-      signed: true,
-      path: "/",
+     
+      signed: true
     });
 
     const token = createToken(user._id.toString(), user.email, "7d");
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
-    res.cookie(COOKIE_NAME, token, {
-      path: "/",
-      domain: "https://mern-gpt-bs1j.vercel.app",
-      expires,
+    res.cookie(COOKIE_NAME, token, { expires,
       httpOnly: true,
       signed: true,
     });
@@ -81,18 +77,15 @@ export const userLogin = async (
     // create token and store cookie
 
     res.clearCookie(COOKIE_NAME, {
-      httpOnly: true,
-      domain: "https://mern-gpt-bs1j.vercel.app",
-      signed: true,
-      path: "/",
+      httpOnly: true, 
+      signed: true, 
     });
 
     const token = createToken(user._id.toString(), user.email, "7d");
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
     res.cookie(COOKIE_NAME, token, {
-      path: "/",
-      domain: "https://mern-gpt-bs1j.vercel.app",
+     
       expires,
       httpOnly: true,
       signed: true,
@@ -146,10 +139,8 @@ export const userLogout = async (
     }
 
     res.clearCookie(COOKIE_NAME, {
-      httpOnly: true,
-      domain: "https://mern-gpt-bs1j.vercel.app",
-      signed: true,
-      path: "/",
+      httpOnly: true, 
+      signed: true, 
     });
 
     return res
