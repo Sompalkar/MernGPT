@@ -151,3 +151,4 @@ export const userLogout = async (
     return res.status(200).json({ message: "ERROR", cause: error.message });
   }
 };
+  
